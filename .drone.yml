@@ -11,7 +11,7 @@ pipeline:
 
   docker:
     image: plugins/docker
-    repo: fnbk/hello
+    repo: hvt1/hello
     debug: true
     secrets: [ docker_username, docker_password ]
 
