@@ -1,6 +1,6 @@
 workspace:
   base: /go
-  path: src/github.com/fnbk/hello
+  path: src/github.com/high-value-team/hello
 
 pipeline:
   build:
