@@ -14,3 +14,4 @@ pipeline:
     repo: fnbk/hello
     debug: true
     secrets: [ docker_hub_username, docker_hub_password ]
+
