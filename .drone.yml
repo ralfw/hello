@@ -14,3 +14,5 @@ pipeline:
     repo: hvt1/hello
     debug: true
     secrets: [ docker_username, docker_password ]
+
+
