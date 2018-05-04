@@ -15,4 +15,3 @@ pipeline:
     debug: true
     secrets: [ docker_username, docker_password ]
 
-
