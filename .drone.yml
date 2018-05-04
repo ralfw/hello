@@ -21,3 +21,4 @@ pipeline:
     service: hello/hello
     docker_image: hvt1/hello
     secrets: [ rancher_access_key, rancher_secret_key ]
+    confirm: true
