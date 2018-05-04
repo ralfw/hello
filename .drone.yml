@@ -13,5 +13,14 @@ pipeline:
     image: plugins/docker
     repo: hvt1/hello
     debug: true
-    secrets: [ docker_username, docker_password ]
+    username: ${docker_username}
+    password: ${docker_password}
+    # secrets: [ docker_username, docker_password ]
 
+  rancher:
+    image: peloton/drone-rancher
+    url: http://18.197.130.97:8080/v1
+    access_key: ${rancher_key}
+    secret_key: ${rancher_secret}
+    service: hello/hello
+    docker_image: hvt1/hello
