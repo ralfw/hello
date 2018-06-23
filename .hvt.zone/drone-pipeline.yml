@@ -14,7 +14,6 @@ pipeline:
   
     ecr:  
       image: plugins/ecr
-      repo: fnbk/hello3
       create_repository: true
 
     parse_deployment_template:
