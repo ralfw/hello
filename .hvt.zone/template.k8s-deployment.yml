@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ${DRONE_REPO_OWNER}-${DRONE_REPO_NAME}
-        image: ${ECR_REPOSITORY_ID}.dkr.ecr.${ECR_REGION}.amazonaws.com/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}:latest
+        image: ${ECR_REPOSITORY_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80

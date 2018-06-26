@@ -12,16 +12,15 @@ pipeline:
         - go test
         - go build
   
-    ecr:  
-      image: plugins/docker
-      tags: latest
-#      create_repository: true
+    push:
+      image: fnbk/drone-ecr
+      secrets: [aws_default_region, aws_access_key_id, aws_secret_access_key]
 
     parse_deployment_template:
       image: fnbk/drone-envsubst:latest
       source: .hvt.zone/template.k8s-deployment.yml
       destination: .hvt.zone/k8s-deployment.yml
-      secrets: [ecr_repository_id, ecr_region]
+      secrets: [ecr_repository_id, aws_default_region]
   
     deploy:
       image: fnbk/drone-kubernetes:latest
