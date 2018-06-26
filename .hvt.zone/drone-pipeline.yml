@@ -13,8 +13,9 @@ pipeline:
         - go build
   
     ecr:  
-      image: plugins/ecr
-      create_repository: true
+      image: plugins/docker
+      tags: latest
+#      create_repository: true
 
     parse_deployment_template:
       image: fnbk/drone-envsubst:latest
