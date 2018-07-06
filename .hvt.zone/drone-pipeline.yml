@@ -13,7 +13,7 @@ pipeline:
         - go build
   
     push:
-      image: hvt1/drone-ecr
+      image: hvt1/drone-ecr:latest
       secrets: [aws_default_region, aws_access_key_id, aws_secret_access_key]
 
     parse_deployment_template:
