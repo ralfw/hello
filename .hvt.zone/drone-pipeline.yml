@@ -13,17 +13,17 @@ pipeline:
         - go build
   
     push:
-      image: fnbk/drone-ecr
+      image: hvt1/drone-ecr
       secrets: [aws_default_region, aws_access_key_id, aws_secret_access_key]
 
     parse_deployment_template:
-      image: fnbk/drone-envsubst:latest
+      image: hvt1/drone-envsubst:latest
       source: .hvt.zone/template.k8s-deployment.yml
       destination: .hvt.zone/k8s-deployment.yml
       secrets: [ecr_repository_id, aws_default_region]
   
     deploy:
-      image: fnbk/drone-kubernetes:latest
+      image: hvt1/drone-kubernetes:latest
       secrets: [ kubernetes_server, kubernetes_certificate_authority_data, kubernetes_client_certificate_data, kubernetes_client_key_data ]
       deployment: .hvt.zone/k8s-deployment.yml
       # kubectl: "get nodes"
